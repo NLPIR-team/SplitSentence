@@ -33,22 +33,23 @@ public class SplitSentence {
 	public void SS_Exit() {
 		CLibrarySpiltSentence.Instance.SS_Exit();
 	}
-	
-	public String getContent(File file)throws Exception{
-		RandomAccessFile f=new RandomAccessFile(file, "r");
-		byte[] b=new byte[(int) file.length()];
+
+	public String getContent(File file) throws Exception {
+		RandomAccessFile f = new RandomAccessFile(file, "r");
+		byte[] b = new byte[(int) file.length()];
 		f.read(b);
 		f.close();
-		String c=new String(b,"utf-8").replaceAll("\\s", "");
+		String c = new String(b, "utf-8").replaceAll("\\s", "");
 		return c;
 	}
-	
+
 	public static void main(String[] args) throws Exception {
-		SplitSentence ss=new SplitSentence("","");
+		SplitSentence ss = new SplitSentence("", "");
 		ss.SS_GetSentence(ss.getContent(new File("5.txt")), 1);
-		while(true) {
-			String str=ss.SS_GetSentence(null, 1);
-			if(str.isEmpty()) break;
+		while (true) {
+			String str = ss.SS_GetSentence(null, 1);
+			if (str.isEmpty())
+				break;
 			System.out.println(str);
 		}
 		ss.SS_Exit();
