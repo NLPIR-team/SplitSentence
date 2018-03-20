@@ -5,7 +5,7 @@ import com.sun.jna.Native;
 
 public interface CLibrarySpiltSentence extends Library {
 
-	CLibrarySpiltSentence Instance = (CLibrarySpiltSentence) Native.loadLibrary("SpiltSentence",
+	CLibrarySpiltSentence Instance = (CLibrarySpiltSentence) Native.loadLibrary("SplitSentence",
 			CLibrarySpiltSentence.class);
 
 	public int SS_Init(String sDataPath, String sLicenceCode);
