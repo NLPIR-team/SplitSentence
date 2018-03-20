@@ -45,9 +45,12 @@ public class SplitSentence {
 	
 	public static void main(String[] args) throws Exception {
 		SplitSentence ss=new SplitSentence("","");
-		String[] sentences=ss.SS_GetSentence(ss.getContent(new File("5.txt")), 1).split("\n");
-		for(String str:sentences)
+		ss.SS_GetSentence(ss.getContent(new File("5.txt")), 1);
+		while(true) {
+			String str=ss.SS_GetSentence(null, 1);
+			if(str.isEmpty()) break;
 			System.out.println(str);
+		}
 		ss.SS_Exit();
 	}
 }
